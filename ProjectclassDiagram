@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PL2NewProject">
+  <ClassDiagramComponents>
+    <Class name="Admin" package="pl2project" visibility="public" xPosition="30.0" yPosition="734.0">
+      <Fields>
+        <Field name="FManger" type="FileManger" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addNewEmployee" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="displayEmployees" returnType="void" visibility="public"/>
+        <Method name="searchForEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Employee" name="newStudentValues"/>
+        </Method>
+        <Method name="deleteEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="addNewTeamLeader" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="displayTeamLeader" returnType="void" visibility="public"/>
+        <Method name="searchForTeamLeader" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateTeamLeader" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="TeamLeader" name="newProfValues"/>
+        </Method>
+        <Method name="deleteTeamLeader" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="addNewPM" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="displayPMs" returnType="void" visibility="public"/>
+        <Method name="searchForPMs" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updatePMs" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="ProjectManger" name="newTAValues"/>
+        </Method>
+        <Method name="deletePM" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="displayTasks" returnType="void" visibility="public"/>
+        <Method name="addTask" returnType="void" visibility="public">
+          <Argument type="String" name="TaskName"/>
+          <Argument type="int" name="TaskId"/>
+          <Argument type="int" name="ProjectId"/>
+        </Method>
+        <Method name="searchForTask" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateTasks" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Tasks" name="newTaskValues"/>
+        </Method>
+        <Method name="deleteTask" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="displayProjects" returnType="void" visibility="public"/>
+        <Method name="addProject" returnType="void" visibility="public">
+          <Argument type="String" name="ProjectName"/>
+          <Argument type="int" name="ProjectId"/>
+        </Method>
+        <Method name="searchForProject" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateProjects" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Projects" name="newProjectValues"/>
+        </Method>
+        <Method name="deleteProject" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="admin" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Employee" package="pl2project" visibility="public" xPosition="689.0" yPosition="54.0">
+      <Fields>
+        <Field name="FManger" type="FileManger" visibility="package"/>
+        <Field name="EmployeeFileName" type="String" visibility="private" isFinal="true"/>
+        <Field name="entryTime" type="Date" visibility="package"/>
+        <Field name="exitTime" type="Date" visibility="private"/>
+        <Field name="vacation" type="String" visibility="protected"/>
+        <Field name="monthlyWorkingHours" type="Date" visibility="private"/>
+        <Field name="penalteis" type="String" visibility="private"/>
+        <Field name="finishedTasks" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="f1" type="JFrame" visibility="private"/>
+        <Field name="entry" type="JButton" visibility="private"/>
+        <Field name="l1" type="JLabel" visibility="private"/>
+        <Field name="p1" type="JPanel" visibility="private"/>
+        <Field name="t1" type="JTextArea" visibility="private"/>
+        <Field name="text" type="String" visibility="package"/>
+        <Field name="scroll" type="JScrollPane" visibility="package"/>
+        <Field name="task" type="Tasks" visibility="package"/>
+        <Field name="Employees" type="ArrayList&lt;Employee&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="package">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="Fname"/>
+          <Argument type="String" name="Lname"/>
+          <Argument type="int" name="age"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setEntryTime" returnType="void" visibility="public">
+          <Argument type="Date" name="entryTime"/>
+        </Method>
+        <Method name="setExitTime" returnType="void" visibility="public">
+          <Argument type="Date" name="exitTime"/>
+        </Method>
+        <Method name="setVacation" returnType="void" visibility="public">
+          <Argument type="String" name="vacation"/>
+        </Method>
+        <Method name="setMonthlyWorkingHours" returnType="void" visibility="public">
+          <Argument type="Date" name="monthlyWorkingHours"/>
+        </Method>
+        <Method name="setPenalteis" returnType="void" visibility="public">
+          <Argument type="String" name="penalteis"/>
+        </Method>
+        <Method name="setFinishedTasks" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="finishedTasks"/>
+        </Method>
+        <Method name="setEmployees" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Employee&gt;" name="Employees"/>
+        </Method>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setUserName" returnType="void" visibility="public">
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="setPass" returnType="void" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="setFname" returnType="void" visibility="public">
+          <Argument type="String" name="fname"/>
+        </Method>
+        <Method name="setLname" returnType="void" visibility="public">
+          <Argument type="String" name="lname"/>
+        </Method>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getEmployeeFileName" returnType="String" visibility="public"/>
+        <Method name="getEntryTime" returnType="Date" visibility="public"/>
+        <Method name="getExitTime" returnType="Date" visibility="public"/>
+        <Method name="getVacation" returnType="String" visibility="public"/>
+        <Method name="getMonthlyWorkingHours" returnType="Date" visibility="public"/>
+        <Method name="getPenalteis" returnType="String" visibility="public"/>
+        <Method name="getFinishedTasks" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="getEmployees" returnType="ArrayList&lt;Employee&gt;" visibility="public" isStatic="true"/>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getUserName" returnType="String" visibility="public"/>
+        <Method name="getPass" returnType="String" visibility="public"/>
+        <Method name="getFname" returnType="String" visibility="public"/>
+        <Method name="getLname" returnType="String" visibility="public"/>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="addEmployee" returnType="boolean" visibility="public"/>
+        <Method name="getEmployeeData" returnType="String" visibility="private"/>
+        <Method name="commitToFile" returnType="void" visibility="private"/>
+        <Method name="getEmployeeIndex" returnType="int" visibility="private">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="loadFromFile" returnType="void" visibility="private"/>
+        <Method name="displayAllEmployees" returnType="String" visibility="public"/>
+        <Method name="searchEmployee" returnType="String" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Employee" name="x"/>
+        </Method>
+        <Method name="deleteEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setEntryTime" returnType="void" visibility="public"/>
+        <Method name="setExitTime" returnType="void" visibility="public"/>
+        <Method name="calcMounthlyWorkingHours" returnType="String" visibility="public"/>
+        <Method name="viewPenalties" returnType="String" visibility="public"/>
+        <Method name="setfinishedTasks" returnType="void" visibility="public">
+          <Argument type="String" name="finishedTasks"/>
+        </Method>
+        <Method name="viewAssignedTasks" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="viewFinishedTasks" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="getEmpData" returnType="String" visibility="public"/>
+        <Method name="requestVacations" returnType="void" visibility="public">
+          <Argument type="String" name="vacation"/>
+        </Method>
+        <Method name="test" returnType="void" visibility="public"/>
+        <Method name="login" returnType="boolean" visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FileManger" package="pl2project" visibility="public" xPosition="1923.0" yPosition="701.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="write" returnType="boolean" visibility="public">
+          <Argument type="String" name="Query"/>
+          <Argument type="String" name="FilePath"/>
+          <Argument type="boolean" name="appendType"/>
+        </Method>
+        <Method name="read" returnType="ArrayList&lt;Object&gt;" visibility="public">
+          <Argument type="String" name="FilePath"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Login" package="pl2project" visibility="public" xPosition="1448.0" yPosition="271.0">
+      <Fields>
+        <Field name="f" type="JFrame" visibility="private"/>
+        <Field name="b" type="JButton" visibility="private"/>
+        <Field name="lab" type="JLabel" visibility="private"/>
+        <Field name="p" type="JPanel" visibility="private"/>
+        <Field name="t" type="JTextArea" visibility="private"/>
+        <Field name="jf" type="JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="test" returnType="void" visibility="package"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Person" package="pl2project" visibility="public" isAbstract="true" xPosition="2074.0" yPosition="1023.0">
+      <Fields>
+        <Field name="id" type="int" visibility="protected"/>
+        <Field name="userName" type="String" visibility="protected"/>
+        <Field name="pass" type="String" visibility="protected"/>
+        <Field name="fname" type="String" visibility="protected"/>
+        <Field name="lname" type="String" visibility="protected"/>
+        <Field name="age" type="int" visibility="protected"/>
+        <Field name="FManger" type="FileManger" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="setID" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setFName" returnType="void" visibility="public">
+          <Argument type="String" name="fname"/>
+        </Method>
+        <Method name="setLName" returnType="void" visibility="public">
+          <Argument type="String" name="lname"/>
+        </Method>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="setUserName" returnType="void" visibility="public">
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="setPass" returnType="void" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="getuserName" returnType="String" visibility="public"/>
+        <Method name="getPass" returnType="String" visibility="public"/>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="getFName" returnType="String" visibility="public"/>
+        <Method name="getLName" returnType="String" visibility="public"/>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="login" returnType="boolean" visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PL2PRoject" package="pl2project" visibility="public" xPosition="1358.0" yPosition="71.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProjectManger" package="pl2project" visibility="public" xPosition="1820.0" yPosition="3.0">
+      <Fields>
+        <Field name="f" type="JFrame" visibility="private"/>
+        <Field name="b" type="JButton" visibility="private"/>
+        <Field name="lab" type="JLabel" visibility="private"/>
+        <Field name="p" type="JPanel" visibility="private"/>
+        <Field name="t" type="JTextArea" visibility="private"/>
+        <Field name="table" type="JTable" visibility="private"/>
+        <Field name="js" type="JScrollPane" visibility="private"/>
+        <Field name="tf" type="JTextField" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="number" type="String" visibility="private"/>
+        <Field name="projectid" type="String" visibility="private"/>
+        <Field name="line" type="String" visibility="package"/>
+        <Field name="PMFileName" type="String" visibility="private" isFinal="true"/>
+        <Field name="PMs" type="ArrayList&lt;ProjectManger&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addPM" returnType="boolean" visibility="public"/>
+        <Method name="getPMData" returnType="String" visibility="private"/>
+        <Method name="commitToFile" returnType="void" visibility="private"/>
+        <Method name="getPMIndex" returnType="int" visibility="private">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="loadFromFile" returnType="void" visibility="private"/>
+        <Method name="displayAllPMs" returnType="String" visibility="public"/>
+        <Method name="searchPM" returnType="String" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updatePM" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="ProjectManger" name="x"/>
+        </Method>
+        <Method name="deletePM" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="percentofcom" returnType="void" visibility="public"/>
+        <Method name="test" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="login" returnType="boolean" visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Projects" package="pl2project" visibility="public" xPosition="2442.0" yPosition="20.0">
+      <Fields>
+        <Field name="ProjectId" type="int" visibility="private"/>
+        <Field name="ProjectName" type="String" visibility="private"/>
+        <Field name="FManger" type="FileManger" visibility="package"/>
+        <Field name="ProjectsFileName" type="String" visibility="private" isFinal="true"/>
+        <Field name="projects" type="ArrayList&lt;Projects&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Name"/>
+          <Argument type="int" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setProjectId" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="setProjectName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="getProjectId" returnType="int" visibility="public"/>
+        <Method name="getProjectname" returnType="String" visibility="public"/>
+        <Method name="addProjects" returnType="boolean" visibility="public"/>
+        <Method name="getProjectsData" returnType="String" visibility="private"/>
+        <Method name="commitToFile" returnType="void" visibility="private"/>
+        <Method name="getProjectIndex" returnType="int" visibility="private">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="loadFromFile" returnType="void" visibility="private"/>
+        <Method name="displayAllProjects" returnType="String" visibility="public"/>
+        <Method name="searchProjects" returnType="String" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateProjects" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Projects" name="x"/>
+        </Method>
+        <Method name="deleteProjects" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="addProject" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tasks" package="pl2project" visibility="public" xPosition="78.0" yPosition="71.0">
+      <Fields>
+        <Field name="TName" type="String" visibility="private"/>
+        <Field name="TId" type="int" visibility="private"/>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="FManger" type="FileManger" visibility="package"/>
+        <Field name="TasksFileName" type="String" visibility="private" isFinal="true"/>
+        <Field name="tasks" type="ArrayList&lt;Tasks&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Tname"/>
+          <Argument type="int" name="TId"/>
+          <Argument type="int" name="PId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setTasksId" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="setTasksPId" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="setTasksname" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getTasksId" returnType="int" visibility="public"/>
+        <Method name="getTasksPId" returnType="int" visibility="public"/>
+        <Method name="getTasksname" returnType="String" visibility="public"/>
+        <Method name="addTasks" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getTasksData" returnType="String" visibility="private"/>
+        <Method name="commitToFile" returnType="void" visibility="private"/>
+        <Method name="getTasksIndex" returnType="int" visibility="private">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="loadFromFile" returnType="void" visibility="private"/>
+        <Method name="displayAllTasks" returnType="String" visibility="public"/>
+        <Method name="searchTasks" returnType="String" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateTasks" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Tasks" name="x"/>
+        </Method>
+        <Method name="deleteTasks" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="addTask" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TeamLeader" package="pl2project" visibility="public" xPosition="1480.0" yPosition="1009.0">
+      <Fields>
+        <Field name="input" type="Scanner" visibility="package"/>
+        <Field name="TeamLeaderFileName" type="String" visibility="private" isFinal="true"/>
+        <Field name="Leader" type="ArrayList&lt;TeamLeader&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTeamLeaderData" returnType="String" visibility="private"/>
+        <Method name="commitToFile" returnType="void" visibility="private"/>
+        <Method name="getTeamLeaderIndex" returnType="int" visibility="private">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="loadFromFile" returnType="void" visibility="private"/>
+        <Method name="addTeamLeader" returnType="boolean" visibility="public"/>
+        <Method name="displayAllTeamLeader" returnType="String" visibility="public"/>
+        <Method name="searchTeamLeader" returnType="String" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateTeamLeader" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="TeamLeader" name="x"/>
+        </Method>
+        <Method name="deleteTeamLeader" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="addNewEmployee" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="displayEmployees" returnType="void" visibility="public"/>
+        <Method name="searchForEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="updateEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="oldID"/>
+          <Argument type="Employee" name="newStudentValues"/>
+        </Method>
+        <Method name="deleteEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="addTask" returnType="void" visibility="public">
+          <Argument type="String" name="TaskName"/>
+          <Argument type="int" name="TaskId"/>
+          <Argument type="int" name="ProjectId"/>
+        </Method>
+        <Method name="login" returnType="boolean" visibility="public">
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="Pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TeamLeaderGUI" package="pl2project" visibility="public" xPosition="1199.0" yPosition="525.0">
+      <Fields>
+        <Field name="emp" type="Employee" visibility="package"/>
+        <Field name="jf" type="JFrame" visibility="package"/>
+        <Field name="jf2" type="JFrame" visibility="package"/>
+        <Field name="jf3" type="JFrame" visibility="package"/>
+        <Field name="table" type="JTable" visibility="package"/>
+        <Field name="id" type="JLabel" visibility="package"/>
+        <Field name="idtf" type="JTextField" visibility="package"/>
+        <Field name="name" type="JLabel" visibility="package"/>
+        <Field name="ntf" type="JTextField" visibility="package"/>
+        <Field name="lname" type="JLabel" visibility="package"/>
+        <Field name="ltf" type="JTextField" visibility="package"/>
+        <Field name="age" type="JLabel" visibility="package"/>
+        <Field name="atf" type="JTextField" visibility="package"/>
+        <Field name="idtask" type="JLabel" visibility="package"/>
+        <Field name="tname" type="JLabel" visibility="package"/>
+        <Field name="tasknamef" type="JTextField" visibility="package"/>
+        <Field name="pid" type="JLabel" visibility="package"/>
+        <Field name="ptf" type="JTextField" visibility="package"/>
+        <Field name="empid" type="JLabel" visibility="package"/>
+        <Field name="emptf" type="JTextField" visibility="package"/>
+        <Field name="user" type="JLabel" visibility="package"/>
+        <Field name="usern" type="JTextField" visibility="package"/>
+        <Field name="pass" type="JLabel" visibility="package"/>
+        <Field name="password" type="JTextField" visibility="package"/>
+        <Field name="penid" type="JLabel" visibility="package"/>
+        <Field name="pensid" type="JTextField" visibility="package"/>
+        <Field name="Add" type="JButton" visibility="package"/>
+        <Field name="Delete" type="JButton" visibility="package"/>
+        <Field name="Display" type="JButton" visibility="package"/>
+        <Field name="Exit" type="JButton" visibility="package"/>
+        <Field name="task" type="JButton" visibility="package"/>
+        <Field name="gototasks" type="JButton" visibility="package"/>
+        <Field name="setpen" type="JButton" visibility="package"/>
+        <Field name="gotopens" type="JButton" visibility="package"/>
+        <Field name="t" type="JTextField" visibility="package"/>
+        <Field name="addt" type="JLabel" visibility="package"/>
+        <Field name="back" type="JButton" visibility="package"/>
+        <Field name="viewcomptasks" type="JButton" visibility="package"/>
+        <Field name="penta" type="JTextArea" visibility="package"/>
+        <Field name="displayarea" type="JTextArea" visibility="package"/>
+        <Field name="comptasks" type="JTextArea" visibility="package"/>
+        <Field name="fw" type="FileWriter" visibility="package"/>
+        <Field name="fr" type="FileReader" visibility="package"/>
+        <Field name="x" type="Admin" visibility="package"/>
+        <Field name="TA" type="Tasks" visibility="package"/>
+        <Field name="scroll" type="JScrollPane" visibility="package"/>
+        <Field name="scroll2" type="JScrollPane" visibility="package"/>
+        <Field name="scroll3" type="JScrollPane" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="test" returnType="void" visibility="public"/>
+        <Method name="getEmpData" returnType="String" visibility="public"/>
+        <Method name="Exit" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="FManger" source="pl2project.Person" target="pl2project.FileManger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pl2project.Admin" target="pl2project.Person"/>
+    <HasRelation name="task" source="pl2project.Employee" target="pl2project.Tasks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tasks" source="pl2project.Tasks" target="pl2project.Tasks" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Tasks&gt;"/>
+    <HasRelation name="Employees" source="pl2project.Employee" target="pl2project.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Employee&gt;"/>
+    <UseRelation source="pl2project.Admin" target="pl2project.Tasks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Leader" source="pl2project.TeamLeader" target="pl2project.TeamLeader" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;TeamLeader&gt;"/>
+    <IsRelation name="is" source="pl2project.ProjectManger" target="pl2project.Person"/>
+    <HasRelation name="FManger" source="pl2project.Employee" target="pl2project.FileManger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.Projects" target="pl2project.Projects" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pl2project.TeamLeader" target="pl2project.Person"/>
+    <UseRelation source="pl2project.Employee" target="pl2project.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pl2project.TeamLeaderGUI" target="pl2project.Employee"/>
+    <IsRelation name="is" source="pl2project.Login" target="pl2project.Person"/>
+    <HasRelation name="TA" source="pl2project.TeamLeaderGUI" target="pl2project.Tasks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pl2project.Employee" target="pl2project.Person"/>
+    <UseRelation source="pl2project.TeamLeader" target="pl2project.TeamLeader" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.TeamLeader" target="pl2project.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.Admin" target="pl2project.TeamLeader" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.ProjectManger" target="pl2project.ProjectManger" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.Admin" target="pl2project.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.Admin" target="pl2project.ProjectManger" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="projects" source="pl2project.Projects" target="pl2project.Projects" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Projects&gt;"/>
+    <HasRelation name="PMs" source="pl2project.ProjectManger" target="pl2project.ProjectManger" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ProjectManger&gt;"/>
+    <HasRelation name="FManger" source="pl2project.Tasks" target="pl2project.FileManger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="x" source="pl2project.TeamLeaderGUI" target="pl2project.Admin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.Tasks" target="pl2project.Tasks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="FManger" source="pl2project.Admin" target="pl2project.FileManger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="FManger" source="pl2project.Projects" target="pl2project.FileManger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pl2project.Admin" target="pl2project.Projects" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="emp" source="pl2project.TeamLeaderGUI" target="pl2project.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
